@@ -15,11 +15,11 @@
 #rgenpareto(n, shape1, shape2, scale) #de actuar
 
 library(actuar)
-library(MASS)         #De aquí usamos fitdistr
+library(MASS)         #De aquÃ­ usamos fitdistr
 library(survival)
-library(fitdistrplus) #De aquí usamos fitdist
+library(fitdistrplus) #De aquÃ­ usamos fitdist
 
-#Función que estima parametros y hace las pruebas de bondad de ajuste.
+#FunciÃ³n que estima parametros y hace las pruebas de bondad de ajuste.
 #Recibe un vector como parametro
 #Devuelve una matriz con los parametros estimados, estadisticas  y p-value
 
@@ -341,8 +341,8 @@ myfunction <- function(x){
 
 
 
-#Función final, hace lo que queriamos.
-#Función que recibe n vectores.
+#FunciÃ³n final, hace lo que queriamos.
+#FunciÃ³n que recibe n vectores.
 #Imprime n matrices con los estimados, estadisticas y p-values de cada uno de los n vectores.
 ajuste <- function(...){   #Recibe n vectores
   u <- list(...) #Guarda los n vectores en una lista, esta lista se le asigna a la variable u. 
@@ -361,11 +361,6 @@ set.seed(100)
 x <- rexp(500,rate = 5) 
 z <- rburr(500, shape1=10, shape2=10, scale = 15)
 ajuste(x,z)
-
-#Nota
-#Con algunos vectores manda el mensaje "simpleError"
-#Esto es porque no lo pudo ajustar a un modelo usando el metodo "mge", en tal caso se usa el estimador por "qme" por default, solo
-#que no pude suprimir el mensaje "simpleError". Aun así funciona, el mensaje no afecta la ejecución.
 
 
 
